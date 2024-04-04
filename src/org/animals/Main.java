@@ -10,20 +10,20 @@ public class Main {
             animal.dormi();
             //controlla se l'animale implementa IFly
             if (animal instanceof IFly){
-                faiVolare(animal);
+                faiVolare((IFly) animal);
                 //altrimenti sarà un animale che implementa ISwim
             }else {
-                faiNuotare(animal);
+                faiNuotare((ISwim) animal);
             }
             System.out.println("----------------");
         }
     }
 
-    public static void faiVolare(Animale animale){
-            ((IFly) animale).fly();
+    public static void faiVolare(IFly animale){
+            animale.fly();
     }
 
-    public static void faiNuotare(Animale animale){
-            ((ISwim) animale).swim();
+    public static void faiNuotare(ISwim animale){
+            animale.swim();
     }
 }
